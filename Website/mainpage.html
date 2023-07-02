@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inglemoor DECA</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @font-face {
+      font-family: "Gotham Bold";
+      src: url("Gotham Bold.ttf") format("truetype");
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Gotham Bold", sans-serif;
+      background-image: url("images/decabackground.jpeg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    .content {
+      height: 100vh; /* Set the height of the content container */
+      overflow: auto; /* Enable scrolling when content exceeds container height */
+      padding: 20px; /* Add some padding to the content */
+    }
+
+    header {
+      background-color: rgb(29, 39, 79);
+      padding: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-size: 16px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #8ee9e2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href = "#decastore">DECA Store</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="home" style="display: flex; align-items: center; justify-content: center; height: 25vh;">
+    <img src="images/decalogo.png" style="max-width: 3%; height: auto;">
+    <h1 style="font-family: 'Gotham Bold'; color: white; font-size: 60px; margin-left: 10px;">Inglemoor DECA</h1>
+    <!-- Home content goes here -->
+  </div>
+
+
+  <!-- Rest of the content -->
+
+</body>
+</html>
