@@ -14,7 +14,7 @@
       margin: 0;
       padding: 0;
       font-family: "Gotham Bold", sans-serif;
-      background-image: url("images/decabackground.jpeg");
+      background-image: url("images/background2.png");
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
@@ -23,6 +23,36 @@
       height: 100vh; /* Set the height of the content container */
       overflow: auto; /* Enable scrolling when content exceeds container height */
       padding: 20px; /* Add some padding to the content */
+    }
+    .reveal {
+      position: relative;
+      transform: translateY(150px);
+      opacity: 0;
+      transition: transform 1s ease, opacity 1s ease;
+    }
+    .reveal.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .button {
+      border: none;
+      color: darkblue;
+      padding: 15px 40px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 30px; /* Added to round the corners */
+      background-color: lightblue; /* Added to set a background color */
+      font-family: 'Gotham Bold', sans-serif; /* Added to set the font family to Gotham Bold */
+      transition: background-color 0.3s, color 0.3s; /* Added for smooth transition */
+    }
+
+    .button:hover {
+      background-color: darkblue; /* Change background color on hover */
+      color: white; /* Change text color on hover */
     }
 
     header {
@@ -57,24 +87,61 @@
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href = "#decastore">DECA Store</a></li>
+    <nav style="display: flex; align-items: center;">
+      <img src="images/decalogo.png" style="max-width: 3%; height: auto; margin-right: 50px;">
+      <ul style="display: flex; list-style-type: none; padding: 0; margin: 0;">
+        <li style="margin-right: 10px;"><a href="#home">Home</a></li>
+        <li style="margin-right: 10px;"><a href="#important-dates">Important Dates</a></li>
+        <li style="margin-right: 10px;"><a href="#events">Events</a></li>
+        <li style="margin-right: 10px;"><a href="#team">Team</a></li>
+        <li style="margin-right: 10px;"><a href="#decastore">DECA Store</a></li>
       </ul>
     </nav>
   </header>
 
-  <div id="home" style="display: flex; align-items: center; justify-content: center; height: 25vh;">
-    <img src="images/decalogo.png" style="max-width: 3%; height: auto;">
-    <h1 style="font-family: 'Gotham Bold'; color: white; font-size: 60px; margin-left: 10px;">Inglemoor DECA</h1>
+  <div id="home" style="display: flex; align-items: center; justify-content: center; height: 90vh;">
+    <div style="text-align: center;">
+      <h1 style="font-family: 'Gotham Bold'; color: white; font-size: 100px;">Inglemoor DECA</h1>
+      <p style="font-family: 'Gotham Bold'; color: white; font-size: 30px;">
+        Experience the Difference<br>
+        With Inglemoor DECA
+      </p>
+      <button class="button">
+        Join Us!
+      </button>
+    </div>
     <!-- Home content goes here -->
   </div>
-
+  
+  <section id="important-dates" class="content reveal">
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <h1 style="font-family: 'Gotham Bold'; color: white; font-size: 40px;">Important Dates</h1>
+      <!-- Important Dates content goes here -->
+    </div>
+  </section>
+  
 
   <!-- Rest of the content -->
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const revealElements = document.querySelectorAll('.reveal');
+
+      function revealOnScroll() {
+        for (let i = 0; i < revealElements.length; i++) {
+          const windowHeight = window.innerHeight;
+          const revealTop = revealElements[i].getBoundingClientRect().top;
+          const revealPoint = 150;
+
+          if (revealTop < windowHeight - revealPoint) {
+            revealElements[i].classList.add('active');
+          }
+        }
+      }
+
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll();
+    });
+  </script>
 </body>
 </html>
