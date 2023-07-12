@@ -14,7 +14,7 @@
       margin: 0;
       padding: 0;
       font-family: "Gotham Bold", sans-serif;
-      background-image: url("images/background2.png");
+      background-image: url("images/background1.png");
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
@@ -40,8 +40,11 @@
         background-attachment: fixed;
         background-size: cover; /* Red background for Section 1 */
     }
-    #section2 {
-        background-color: #00ff00; /* Green background for Section 2 */
+    #resources {
+      background-image: url("images/background3.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover; /* Green background for Section 2 */
     }
     #section3 {
         background-color: #0000ff; /* Blue background for Section 3 */
@@ -61,10 +64,24 @@
       font-family: 'Gotham Bold', sans-serif; /* Added to set the font family to Gotham Bold */
       transition: background-color 0.3s, color 0.3s; /* Added for smooth transition */
     }
+    .small-button {
+      width: 100px; /* Set the desired width */
+      height: 100px; /* Set the desired height */
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+      outline: none; /* Remove the outline */
+    }
+
 
     .button:hover {
       background-color: darkblue; /* Change background color on hover */
-      color: white; /* Change text color on hover */
+      color: white; /* Change text 
+      color on hover */
+    }
+    .small-image {
+      max-width: 100%; /* Shrink the image to fit within the button */
+      max-height: 100%; /* Shrink the image to fit within the button */
     }
 
     header {
@@ -106,9 +123,9 @@
         <li style="margin-right: 10px;"><a href="#home">Home</a></li>
         <li style="margin-right: 10px;"><a href="#important-dates">Important Dates</a></li>
         <li style="margin-right: 10px;"><a href="#events">Events</a></li>
-        <li style="margin-right: 10px;"><a href="#resources">Resources</a></li>
         <li style="margin-right: 10px;"><a href="#team">Team</a></li>
-        <li style="margin-right: 10px;"><a href="#decastore">DECA Store</a></li>
+        <li style="margin-right: 10px;"><a href="https://drive.google.com/drive/u/1/folders/1cT06NpDMeBS0UHMZ0a4pTnC7VfV1h9yB" target = "_blank">Resources</a></li>
+        <li style="margin-right: 10px;"><a href="decastore.html">DECA Store</a></li>
       </ul>
     </nav>
   </header>  
@@ -153,17 +170,6 @@
     
   </section>
 
-  <section id="resources" class="content reveal">
-    <div style="display: flex; align-items: center; justify-content: center;">
-      <h1 style="font-family: 'Gotham Bold'; color: white; font-size: 40px;">Important Dates</h1>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-      <!-- Important Dates content goes here -->
-      <p style = "font-family: 'Gotham Bold'; color: white; font-size: 30 px; margin-bottom: 20px">This is a list of compiled resources for our chapter!</p>
-
-    </div>
-    
-  </section>
 
   <section id="team" class="content reveal">
     <div style="display: flex; align-items: center; justify-content: center;">
