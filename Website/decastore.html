@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inglemoor DECA Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @font-face {
+      font-family: "Gotham Bold";
+      src: url("Gotham Bold.ttf") format("truetype");
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Gotham Bold", sans-serif;
+      background-image: url("images/decastorebg.png");
+      background-repeat: no-repeat;
+      background-position: top; 
+      background-size: cover;
+    }
+    .content {
+      height: 100vh; /* Set the height of the content container */
+      overflow: auto; /* Enable scrolling when content exceeds container height */
+      padding: 20px; /* Add some padding to the content */
+    }
+    .reveal {
+      position: relative;
+      transform: translateY(150px);
+      opacity: 0;
+      transition: transform 1s ease, opacity 1s ease;
+    }
+    .reveal.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    #important-dates {
+        background-image: url("images/image.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover; /* Red background for Section 1 */
+    }
+    #resources {
+      background-image: url("images/background3.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover; /* Green background for Section 2 */
+    }
+    #section3 {
+        background-color: #0000ff; /* Blue background for Section 3 */
+    }
+    .button {
+      border: none;
+      color: darkblue;
+      padding: 15px 40px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 30px; /* Added to round the corners */
+      background-color: lightblue; /* Added to set a background color */
+      font-family: 'Gotham Bold', sans-serif; /* Added to set the font family to Gotham Bold */
+      transition: background-color 0.3s, color 0.3s; /* Added for smooth transition */
+    }
+    .small-button {
+      width: 100px; /* Set the desired width */
+      height: 100px; /* Set the desired height */
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+      outline: none; /* Remove the outline */
+    }
+
+
+    .button:hover {
+      background-color: darkblue; /* Change background color on hover */
+      color: white; /* Change text 
+      color on hover */
+    }
+    .small-image {
+      max-width: 100%; /* Shrink the image to fit within the button */
+      max-height: 100%; /* Shrink the image to fit within the button */
+    }
+
+    header {
+      background-color: rgb(29, 39, 79);
+      padding: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-size: 16px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #8ee9e2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav style="display: flex; align-items: center;">
+      <img src="images/whitedecalogo.png" style="max-width: 7%; height: auto;">
+      <p style="font-family: 'Gotham Bold'; color: white; font-size: 25px;""> The DECA Store </p>
+      <ul style="display: flex; list-style-type: none; padding: 0; margin: 0; margin-left: auto;">
+        <li style="margin-right: 10px;"><a href="#home">Home</a></li>
+        <li style="margin-right: 10px;"><a href="#specials">Specials</a></li>
+        <li style="margin-right: 10px;"><a href="#ordering">Ordering</a></li>
+        <li style="margin-right: 10px;"><a href="#team">Team</a></li>
+        <li style="margin-right: 10px;"><a href="mainpage.html">DECA Website</a></li>
+      </ul>
+    </nav>
+  </header>  
+
+  <div id="home" style="display: flex; align-items: center; justify-content: center; height: 90vh;">
+    <div style="text-align: center;">
+      <h1 style="font-family: 'Gotham Bold'; color: white; font-size: 100px;">Welcome to the DECA Store!</h1>
+      <p style="font-family: 'Gotham Bold'; color: white; font-size: 30px;">
+        Open Mondays, Tuesdays, and Fridays at both lunches!
+      </p>
+    </div>
+    <!-- Home content goes here -->
+  </div>
+  
+  <section id = "specials" class = "content reveal">
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <h1 style="font-family: 'Gotham Bold'; color: white; font-size: 40px;">Specials</h1>
+    </div>
+  </section>
+
+  <!-- Rest of the content -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const revealElements = document.querySelectorAll('.reveal');
+
+      function revealOnScroll() {
+        for (let i = 0; i < revealElements.length; i++) {
+          const windowHeight = window.innerHeight;
+          const revealTop = revealElements[i].getBoundingClientRect().top;
+          const revealPoint = 150;
+
+          if (revealTop < windowHeight - revealPoint) {
+            revealElements[i].classList.add('active');
+          }
+        }
+      }
+
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll();
+    });
+  </script>
+</body>
+</html>
