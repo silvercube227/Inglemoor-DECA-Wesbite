@@ -83,6 +83,29 @@
       max-width: 100%; /* Shrink the image to fit within the button */
       max-height: 100%; /* Shrink the image to fit within the button */
     }
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    .title {
+      color: rgb(29, 39, 79);
+      font-size: 18px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 22px;
+      color: black;
+    }
+
+    button:hover, a:hover {
+      opacity: 0.7;
+    }
 
     header {
       background-color: rgb(29, 39, 79);
@@ -116,6 +139,29 @@
     nav ul li a:hover {
       color: #8ee9e2;
     }
+    /* Styles for the dropdown content */
+    .bio-content {
+      text-align: justify;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.5s, max-height 0.5s;
+    }
+
+  /* Show the bio box when active class is added */
+    .bio-content.active {
+
+      opacity: 1;
+      max-height: 1000px;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px; /* Adjust the gap between cards */
+    }
+
+
   </style>
 </head>
 <body>
@@ -196,26 +242,224 @@
     <div style="display: flex; align-items: center; justify-content: center;">
       <h1 style="font-family: 'Gotham Bold'; color: white; font-size: 40px;">DECA Executive Team</h1>
     </div>
-    <div style="display: flex; flex-direction: column; align-items: left; justify-content: center;">
-      <!-- Important Dates content goes here -->
-      <b style="font-family: 'Gotham Bold'; color: white; font-size: 30px; margin-bottom: 20px;">Co-President: Emily Mo</b>
-      <b style="font-family: 'Gotham Bold'; color: white; font-size: 30px; margin-bottom: 20px;">Co-President: Abhinav Akkiraju</b>
-      <b style="font-family: 'Gotham Bold'; color: white; font-size: 30px; margin-bottom: 20px;">Director of Competition: Bennett Ye</b>
-      <b style="font-family: 'Gotham Bold'; color: white; font-size: 30px; margin-bottom: 20px;">Director of Fundraising: Klaira Zhang</b>
-      <b style="font-family: 'Gotham Bold'; color: white; font-size: 30px; margin-bottom: 20px;">Director of Public Relations: Daniel Su</b>
-      <b style="font-family: 'Gotham Bold'; color: white; font-size: 30px; margin-bottom: 20px;">Event Coordinator: Nadia Teng</b>
-      <b style="font-family: 'Gotham Bold'; color: white; font-size: 30px; margin-bottom: 20px;">Retail Co-Manager: Caroline Sheehan</b>
-      <b style="font-family: 'Gotham Bold'; color: white; font-size: 30px; margin-bottom: 20px;">Retail Co-Manager: Isabelle Baquian</b>
-      <b style="font-family: 'Gotham Bold'; color: white; font-size: 30px; margin-bottom: 20px;">Senior Class Representative: Lillie Tsegay</b>
-      <b style="font-family: 'Gotham Bold'; color: white; font-size: 30px; margin-bottom: 20px;">Junior Class Representative: Megan Liao</b>
-      <b style="font-family: 'Gotham Bold'; color: white; font-size: 30px; margin-bottom: 20px;">Sophomore Class Representative: Amy Zhao</b>
-    </div>
+    <div class = "card-container">
+      <div class="card">
+        <img src="images/whitedecalogo.png" style="width:100%">
+        <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Emily Mo</h1>
+        <p class="title">Co-President</p>
+        <button class="small-button" id="emailButton;" style = "justify-content: left;">
+          <img src = "images/emailicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style = "justify-content: right;">
+          <img src = "images/bioicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <div class="bio-content"> <!-- Use a new div for the bio content -->
+          <!-- Bio content goes here -->
+          <p style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px">
+            My name is Emily Mo, a Senior at Inglemoor High School. 
+            I’ve been in DECA all of high school and have competed entirely in finance-related events: Financial Consulting during my Freshman year and Financial Services in the later two. 
+            Through these competitions, I’ve traveled to places from Atlanta, Georgia, to Orlando, Florida. 
+            At each conference, I was able to make friends, develop new skills, and get a step closer to becoming the Finance Bro I aspire to be. 
+            Besides DECA, I enjoy watching Chinese Drama, listening to music, eating fruits, and doing martial arts(kungfu!🐼). 
+            If you share any of these hobbies or have any questions, please approach me anytime- I love children and can’t wait to meet you all this year. 
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/whitedecalogo.png" style="width:100%">
+        <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Abhinav Akkiraju</h1>
+        <p class="title">Co-President</p>
+        <button class="small-button" id="emailButton;" style = "justify-content: left;">
+          <img src = "images/emailicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style = "justify-content: right;">
+          <img src = "images/bioicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <div class="bio-content" > <!-- Use a new div for the bio content -->
+          <!-- Bio content goes here -->
+          <p style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px">
+            abhinav was too busy to write a bio for us ;-;
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/whitedecalogo.png" style="width:100%">
+        <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Bennett Ye</h1>
+        <p class="title">Director of Competition</p>
+        <button class="small-button" id="emailButton;" style = "justify-content: left;">
+          <img src = "images/emailicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style = "justify-content: right;">
+          <img src = "images/bioicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
+          <!-- Bio content goes here -->
+          <p style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px">
+            Hello hello, this is Bennett. I’m currently a senior and this is my third year in DECA (I started in my sophomore year but I regret not starting sooner). 
+            I’m huge classical music and fine arts fan (let me know what your favorite piano piece is :D) as well as the definition of STEM kid, so feel free to reach out! 
+            As for DECA, my work primarily focuses on getting you guys prepared for competitions and providing resources for you so we can keep Inglemoor DECA on top. 
+            My main expertise with events is anything prepared, particularly Innovation Plan and IMC events. If you need ICDC-winning advice, I’m your guy. 
+            Best of luck to all of you and I’ll see you around!
+          </p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img src="images/whitedecalogo.png" style="width:100%">
+        <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Klaira Zhang</h1>
+        <p class="title">Director of Fundraising</p>
+        <button class="small-button" id="emailButton;" style = "justify-content: left;">
+          <img src = "images/emailicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style = "justify-content: right;">
+          <img src = "images/bioicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
+          <!-- Bio content goes here -->
+          <p style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px">
+            My name is Klaira, I’m a senior, and this is my third year serving on the Inglemoor DECA executive team. 
+            Last year, I achieved my elementary self’s goal in high school of traveling to a Disney park through DECA when I attended the international conference in Orlando, FL. 
+            This year, ICDC is at Disneyland in Anaheim, CA and I hope to be able to attend again! I specialize in marketing roleplays, my favorite event being Food Marketing. 
+            DECA has always been my favorite high school club, and offers so many great opportunities from networking and meeting new friends to showcasing your creativity and improving your presentation skills. 
+            I hope you have a great time with Inglemoor DECA and I look forward to getting to know you soon!
+          </p>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <img src="images/whitedecalogo.png" style="width:100%">
+        <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Daniel Su</h1>
+        <p class="title">Director of Public Relations</p>
+        <button class="small-button" id="emailButton;" style = "justify-content: left;">
+          <img src = "images/emailicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style = "justify-content: right;">
+          <img src = "images/bioicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
+          <!-- Bio content goes here -->
+          <p style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px">
+            I’m Daniel and I’m going to be a junior next year. I’m a big fan of listening to music, playing sports, and hanging out with friends. Even after failing my first two years at area, I made it to ICDC top 10 in my event.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/whitedecalogo.png" style="width:100%">
+        <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Nadia Teng</h1>
+        <p class="title">Event Coordinator</p>
+        <button class="small-button" id="emailButton;" style = "justify-content: left;">
+          <img src = "images/emailicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style = "justify-content: right;">
+          <img src = "images/bioicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
+          <!-- Bio content goes here -->
+          <p style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px">
+            Hello, Nadia here :) I’m currently a (semi-retired) competitive table tennis athlete who happens to be allergic to four types of meat. Also a big music person- if you’re a fan of wave to earth, keshi, Laufey, or Luke Chiang, I would love to be your friend and share my playlists with you. Workwise, my contributions to the exec team involve organizing late nights and special DECA events like my title says. Being a senior DECA student, my expertise falls in the Hospitality and Tourism field but also SUBP (Start-up Business Plan) so reach out if you ever need help! Inglemoor DECA has been one of the highlights of my high school career so consider coming for the suits and staying for the friends and core memories. Hope to see you around! ^^
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/whitedecalogo.png" style="width:100%">
+        <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Caroline Sheehan</h1>
+        <p class="title">Co-Retail Manager</p>
+        <button class="small-button" id="emailButton;" style = "justify-content: left;">
+          <img src = "images/emailicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style = "justify-content: right;">
+          <img src = "images/bioicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
+          <!-- Bio content goes here -->
+          <p style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px">
+            My name is Caroline Sheehan, and I am a senior at Inglemoor High School! I’ve been in DECA since my freshman year and it has always been my favorite club. My favorite events to compete in are anything that’s prepared (I did a role play my freshman year, let's just say it was not for me). I’ve met so many people from DECA not only just in Inglemoor DECA but also other chapters all around the country! DECA has helped me so much with my public speaking skills and has created some awesome networking opportunities for me! Other stuff I love to do besides DECA: soccer, reading, eating, listening to music, and hanging out with my friends. DECA can be hard but has taught me so many valuable lessons and life skills so don’t be afraid to reach out for advice! Don’t forget to stop by and visit Izzy and I at the DECA store we’re open Monday, Tuesday, Friday and sometimes in the morning 😉.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/whitedecalogo.png" style="width:100%">
+        <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Izzy Baquian</h1>
+        <p class="title">Co-Retail Manager</p>
+        <button class="small-button" id="emailButton;" style = "justify-content: left;">
+          <img src = "images/emailicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style = "justify-content: right;">
+          <img src = "images/bioicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
+          <!-- Bio content goes here -->
+          <p style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px">
+            Hey I’m Izzy and I am a senior at Inglemoor this year! This is my third year doing DECA and I highly recommend it for anyone in any grade. It’s not only taught me a lot about business and marketing but also other important skills like teamwork and public speaking. One of my favorite things about DECA is there is a spot for everyone. From fashion to sports and entertainment, you’ll be able to find an event that you’ll enjoy. I have competed in Hospitality and Tourism Professional Selling, and Start Up Business so feel free to reach out if you are interested or need help with either event! Outside of DECA I love to play soccer, go thrifting, listen to music, bake yummy desserts, and play spikeball. Come stop by and say hi to Caroline and I in the DECA store and pick up a d
+
+          </p>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <img src="images/whitedecalogo.png" style="width:100%">
+        <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Lillie Tsegay</h1>
+        <p class="title">Senior Class Representative</p>
+        <button class="small-button" id="emailButton;" style = "justify-content: left;">
+          <img src = "images/emailicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style = "justify-content: right;">
+          <img src = "images/bioicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
+          <!-- Bio content goes here -->
+          <p style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px">
+
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/whitedecalogo.png" style="width:100%">
+        <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Megan Liao</h1>
+        <p class="title">Junior Class Representative</p>
+        <button class="small-button" id="emailButton;" style = "justify-content: left;">
+          <img src = "images/emailicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style = "justify-content: right;">
+          <img src = "images/bioicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
+          <!-- Bio content goes here -->
+          <p style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px">
+            My name is Megan Liao, a Junior at Inglemoor High School. I've been a member of DECA throughout high school but recently became more involved in my Sophomore year, competing in Entrepreneurship and Marketing. Going into high school, I never really took clubs seriously 💀. However, attending the DECA conferences from Area to Internationals has allowed me to find a strong sense of community, gain new skills, and meet many amazing people. Aside from DECA, I love listening to music, lifting, gaming, and spending time with friends in my free time. I know that DECA can feel overwhelming and confusing (literally my Freshman year), so feel free to reach out to me for anything. I look forward to meeting you all!
+
+
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/whitedecalogo.png" style="width:100%">
+        <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Amy Zhao</h1>
+        <p class="title">Sophomore Class Representative</p>
+        <button class="small-button" id="emailButton;" style = "justify-content: left;">
+          <img src = "images/emailicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style = "justify-content: right;">
+          <img src = "images/bioicon.png" style="max-width: 50%; height: auto;">
+        </button>
+        <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
+          <!-- Bio content goes here -->
+          <p style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px">
+            My name is Amy, and I am a sophomore at Inglemoor. The DECA event I competed in during my freshman year was Start-Up Business Plan, which I somehow won first place at Area for. Thanks to DECA, I got to make new friends, bond with other students, learn from my mentors, and have an excuse to walk around the mall wearing a business suit. Outside of school, I enjoy writing, dancing, tutoring, and obsessing over boba. As your sophomore representative, I will be focused on making DECA a blast for you. This includes organizing special events and convincing as many people as possible to join DECA, because DECA rocks and so do you! I look forward to meeting you!
+
+          </p>
+        </div>
+      </div>
+
+
     
+    </div>
   </section>
   
   
 
-  <!-- Rest of the content -->
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -242,5 +486,20 @@
       window.location.href = 'https://www.instagram.com/inglemoordeca/?hl=en'; // Replace 'https://example.com' with the desired page URL
     }
   </script>
+  <script>
+    function toggleBioBox() {
+      var bioBox = document.getElementById("bioBox");
+      bioBox.classList.toggle("active"); // Toggle the "active" class on the bio box
+    }
+  </script>
+  <script>
+    function toggleBioBox(button) {
+      var card = button.closest(".card");
+      var bioBox = card.querySelector(".bio-content");
+      bioBox.classList.toggle("active"); // Toggle the "active" class on the bio box
+    }
+  </script>
+
+  
 </body>
 </html>
