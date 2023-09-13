@@ -85,7 +85,7 @@
     }
     .card {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      max-width: 300px;
+      max-width: 275px;
       margin: auto;
       text-align: center;
       background-color: white;
@@ -107,13 +107,42 @@
       opacity: 0.7;
     }
 
-    header {
-      background-color: rgb(29, 39, 79);
-      padding: 10px;
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgb(29,39,79); /* Initial background color with transparency */
+        z-index: 1000; /* Ensure it's on top of other content */
+        padding: 10px 0;
+        transition: background-color 0.3s ease; /* Smooth background color transition */
     }
-    .headerother{
-      background-color : transparent;
-      padding: 10px;
+
+    .header nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .header ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+    }
+
+    /* Add styles to make links in the navigation bar white */
+    .header a {
+        color: white;
+        text-decoration: none;
+    }
+
+    /* Add styles for the transparent background when not in the header */
+    .transparent-background .header {
+        background-color: transparent;
     }
 
     nav ul {
@@ -168,24 +197,24 @@
   </style>
 </head>
 <body>
-  <header>
-    <nav style="display: flex; align-items: center;">
-      <img src="images/whitedecalogo.png" style="max-width: 7%; height: auto;">
-      <p style="font-family: 'Gotham Bold'; color: white; font-size: 25px;""> Inglemoor DECA </p>
-      <ul style="display: flex; list-style-type: none; padding: 0; margin: 0; margin-left: auto; align-items: center;">
-        <button class="small-button" onclick = "handleButtonClick()">
-          <img src="images/instagramlogo.png" style="max-width: 30%; height: auto; margin-left: 50px;">
-        </button>
-        <li style="margin-right: 10px;"><a href="#home">Home</a></li>
-        <li style="margin-right: 10px;"><a href="#">Dates</a></li>
-        <li style="margin-right: 10px;"><a href="#team">Exec</a></li>
-        <li style="margin-right: 10px;"><a href="https://drive.google.com/drive/u/1/folders/1cT06NpDMeBS0UHMZ0a4pTnC7VfV1h9yB" target="_blank">Resources</a></li>
-        <li style="margin-right: 10px;"><a href="decastore.html">DECA Store</a></li>
-      </ul>
+  <header class="header">
+    <nav>
+        <img src="images/whitedecalogo.png" style="max-width: 7%; height: auto;">
+        <p style="font-family: 'Gotham Bold'; color: white; font-size: 25px; padding-right: 950px;">Inglemoor DECA</p>
+        <ul>
+            <button class="small-button" onclick="handleButtonClick()">
+                <img src="images/instagramlogo.png" style="max-width: 30%; height: auto; margin-left: 50px;">
+            </button>
+            <li style="margin-right: 10px;"><a href="#home">Home</a></li>
+            <li style="margin-right: 10px;"><a href="#dates">Dates</a></li>
+            <li style="margin-right: 10px;"><a href="#team">Exec</a></li>
+            <li style="margin-right: 10px;"><a href="https://drive.google.com/drive/u/1/folders/1cT06NpDMeBS0UHMZ0a4pTnC7VfV1h9yB" target="_blank">Resources</a></li>
+            <li style="margin-right: 10px;"><a href="">DECA Store</a></li>
+        </ul>
     </nav>
-  </header>  
+</header>
 
-  <div id="home" style="display: flex; align-items: center; justify-content: center; height: 90vh;">
+  <div id="home" style="display: flex; align-items: center; justify-content: center; height: 100vh;">
     <div style="text-align: center;">
       <h1 style="font-family: 'Gotham Bold'; color: white; font-size: 100px;">Inglemoor DECA</h1>
       <p style="font-family: 'Gotham Bold'; color: white; font-size: 30px;">
@@ -199,36 +228,22 @@
     <!-- Home content goes here -->
   </div>
   
-  <section id="dates" class="content reveal">
-    <header class = "headerother">
-      <nav style="display: flex; align-items: center;">
-        <img src="images/whitedecalogo.png" style="max-width: 7%; height: auto;">
-        <p style="font-family: 'Gotham Bold'; color: white; font-size: 25px;""> Inglemoor DECA </p>
-        <ul style="display: flex; list-style-type: none; padding: 0; margin: 0; margin-left: auto;">
-          <li style="margin-right: 10px;"><a href="#home">Home</a></li>
-          <li style="margin-right: 10px;"><a href="#dates">dates</a></li>
-          <li style="margin-right: 10px;"><a href="#team">Exec</a></li>
-          <li style="margin-right: 10px;"><a href="https://drive.google.com/drive/u/1/folders/1cT06NpDMeBS0UHMZ0a4pTnC7VfV1h9yB" target = "_blank">Resources</a></li>
-          <li style="margin-right: 10px;"><a href="decastore.html">DECA Store</a></li>
-        </ul>
-      </nav>
-    </header> 
+  <section id="dates" class="content reveal" style="overflow: hidden;">
     <div style="display: flex; align-items: center; justify-content: center;">
       <h1 style="font-family: 'Gotham Bold'; color: white; font-size: 40px;">Important Dates</h1>
     </div>
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;">
       <!-- Important Dates content goes here -->
-      <embed type="text/html" src="test.html" width="2000" height="1000">
+      <embed type="text/html" src="test.html" width="2000" height="1000" style="overflow: hidden;">
     </div>
-    
   </section>
 
 
-  <section id="team" class="content reveal">
+  <section id="team" class="content reveal" style = "overflow: hidden;">
     <div style="display: flex; align-items: center; justify-content: center;">
       <h1 style="font-family: 'Gotham Bold'; color: white; font-size: 40px;">DECA Executive Team</h1>
     </div>
-    <div class = "card-container">
+    <div class = "card-container" style = "overflow: hidden; max-height: 120vh;">
       <div class="card">
         <img src="images/whitedecalogo.png" style="width:100%">
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Emily Mo</h1>
@@ -483,6 +498,23 @@
       var bioBox = button.nextElementSibling;
       bioBox.classList.toggle("active")
     }
+  </script>
+  <script>
+    // Function to add/remove class based on scroll position
+    function handleScroll() {
+        const header = document.querySelector('.header');
+        const body = document.body;
+        const scrollY = window.scrollY;
+
+        if (scrollY > header.clientHeight) {
+            body.classList.add('transparent-background');
+        } else {
+            body.classList.remove('transparent-background');
+        }
+    }
+
+    // Add a scroll event listener
+    window.addEventListener('scroll', handleScroll);
   </script>
 </body>
 </html>

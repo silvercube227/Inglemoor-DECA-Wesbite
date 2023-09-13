@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blank Calendar with Days of the Week</title>
+    <title>Calendar with Events</title>
     <style>
         @font-face {
             font-family: "Gotham Bold";
@@ -31,8 +31,9 @@
 
         .calendar-day {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: flex-start;
             width: 100px;
             height: 100px;
             background: rgba(255, 255, 255, 0.25);
@@ -71,10 +72,14 @@
             font-size: 0.9rem;
             color: white;
         }
+
+        .event-list {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <h1 style = "color: white" id="currentMonthYear"></h1>
+    <h1 style="color: white" id="currentMonthYear"></h1>
     <div class="days-of-week">
         <div>Sun</div>
         <div>Mon</div>
@@ -106,18 +111,40 @@
             calendarDiv.appendChild(emptyDiv);
         }
 
-        const today = currentDate.getDate();
-
         for (let day = 1; day <= daysInMonth; day++) {
             const dayDiv = document.createElement("div");
             dayDiv.className = "calendar-day";
-            if (day === today) {
-                dayDiv.classList.add("current-day");
-            }
-            dayDiv.textContent = day;
+            
+            const dayNumber = document.createElement("div");
+            dayNumber.textContent = day;
+            dayDiv.appendChild(dayNumber);
+            
             calendarDiv.appendChild(dayDiv);
         }
-        
+
+        const calendarDays = document.querySelectorAll(".calendar-day");
+
+        const predefinedEvents = {
+            "13": ["First DECA Meeting!"],
+            //add events for each month
+        };
+
+        calendarDays.forEach(day => {
+            const dateKey = day.textContent;
+            if (predefinedEvents[dateKey]) {
+                const eventList = document.createElement("div");
+                eventList.className = "event-list";
+
+                predefinedEvents[dateKey].forEach(eventText => {
+                    const eventElement = document.createElement("div");
+                    eventElement.className = "event";
+                    eventElement.textContent = eventText;
+                    eventList.appendChild(eventElement);
+                });
+
+                day.appendChild(eventList);
+            }
+        });
     </script>
 </body>
 </html>
