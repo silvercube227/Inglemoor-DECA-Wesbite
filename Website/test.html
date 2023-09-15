@@ -48,10 +48,6 @@
             color: white;
         }
 
-        .current-day {
-            background-color: rgba(0, 195, 255, 0.25); /* Green background for the current day */
-        }
-
         .current-day:before {
             content: '';
             position: absolute;
@@ -80,12 +76,6 @@
         .event-list {
             text-align: center;
         }
-
-        .event-link {
-            color: white;
-            text-decoration: underline;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
@@ -109,7 +99,6 @@
         const currentDate = new Date();
         const currentMonth = currentDate.getMonth();
         const currentYear = currentDate.getFullYear();
-        const currentDay = currentDate.getDate();
 
         document.getElementById("currentMonthYear").textContent = `${monthNames[currentMonth]} ${currentYear}`;
 
@@ -129,10 +118,6 @@
             const dayNumber = document.createElement("div");
             dayNumber.textContent = day;
             dayDiv.appendChild(dayNumber);
-
-            if (day === currentDay) {
-                dayDiv.classList.add("current-day");
-            }
             
             calendarDiv.appendChild(dayDiv);
         }
@@ -140,11 +125,8 @@
         const calendarDays = document.querySelectorAll(".calendar-day");
 
         const predefinedEvents = {
-            "13": [
-                "<a class='event-link' href='https://www.canva.com/design/DAFrrX7rTVc/v3TcNMAxsb7I3SAElZllRQ/edit?utm_content=DA[…]m_campaign=designshare&utm_medium=link2&utm_source=sharebutton' target = '_blank'>First DECA Meeting!</a>",
-                // Add more events here
-            ],
-            // Add events for each day
+            "13": ["First DECA Meeting!"],
+            //add events for each month
         };
 
         calendarDays.forEach(day => {
@@ -156,7 +138,7 @@
                 predefinedEvents[dateKey].forEach(eventText => {
                     const eventElement = document.createElement("div");
                     eventElement.className = "event";
-                    eventElement.innerHTML = eventText;
+                    eventElement.textContent = eventText;
                     eventList.appendChild(eventElement);
                 });
 
