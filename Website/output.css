@@ -684,6 +684,11 @@ video {
       align-items: center;
 }
 
+.justify-center {
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
 .gap-20 {
   gap: 5rem;
 }
@@ -767,6 +772,10 @@ video {
 
 .pl-24 {
   padding-left: 6rem;
+}
+
+.pl-12 {
+  padding-left: 3rem;
 }
 
 .text-center {
