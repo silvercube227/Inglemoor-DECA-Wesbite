@@ -7,15 +7,11 @@
   <!-- <link href="" <title>Inglemoor DECA</title> -->
   <!-- <link rel="stylesheet" href="styles.css"> -->
   <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="fonts/Gotham.css" />
   <style>
     /* Enable smooth scrolling! */
     html {
       scroll-behavior: smooth;
-    }
-
-    @font-face {
-      font-family: "Gotham Bold";
-      src: url("Gotham Bold.ttf") format("truetype");
     }
 
     body {
@@ -85,7 +81,7 @@
       background-color: lightblue;
       /* Added to set a background color */
       font-family: 'Gotham Bold', sans-serif;
-      /* Added to set the font family to Gotham Bold */
+      /* Added to set the font family to Gotham_Bold */
       transition: background-color 0.3s, color 0.3s;
       /* Added for smooth transition */
     }
@@ -317,7 +313,8 @@
   </header>
 
   <div id="home" style="display: flex; align-items: center; justify-content: center; height: 100vh;">
-    <div style="text-align: center;">
+    <img src="images/background1.png" alt="background" class="object-cover w-full h-full fixed -z-50" />
+    <div style=" text-align: center;">
       <h1 class="text-white backdrop-blur-sm text-4xl lg:text-6xl xl:text-8xl" style="font-family: 'Gotham Bold';">
         Inglemoor DECA</h1>
       <p class="text-white text-2xl lg:text-4xl xl:text-4xl backdrop-blur-sm w-fit mx-auto rounded-md px-2 my-6"
@@ -326,7 +323,7 @@
         With Inglemoor DECA
       </p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2H6q51P586y4rGRyLnhIHErvByI6XdgyVdN3N23IqFQei8Q/viewform">
-        <button class="text-white bg-blue-400 px-8 py-4 rounded-lg">
+        <button class="text-white bg-blue-400 px-8 py-4 rounded-lg z-10">
           Join Us!
         </button>
       </a>
