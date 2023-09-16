@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
             font-family: "Gotham Bold";
             src: url("Gotham Bold.ttf") format("truetype");
         }
+
         body {
             display: flex;
             flex-flow: column;
@@ -78,6 +80,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1 style="color: white" id="currentMonthYear"></h1>
     <div class="days-of-week">
@@ -114,11 +117,11 @@
         for (let day = 1; day <= daysInMonth; day++) {
             const dayDiv = document.createElement("div");
             dayDiv.className = "calendar-day";
-            
+
             const dayNumber = document.createElement("div");
             dayNumber.textContent = day;
             dayDiv.appendChild(dayNumber);
-            
+
             calendarDiv.appendChild(dayDiv);
         }
 
@@ -147,4 +150,5 @@
         });
     </script>
 </body>
+
 </html>
