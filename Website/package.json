@@ -5,7 +5,7 @@
     "main": "index.html",
     "scripts": {
         "start": "parcel index.html",
-        "build": "parcel build"
+        "build": "parcel build index.html"
     },
     "dependencies": {
         "dayjs": "^1.8.19",
