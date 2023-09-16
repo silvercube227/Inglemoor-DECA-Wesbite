@@ -237,8 +237,7 @@
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       gap: 10px;
-      max-width: 700px;
-      padding: 20px;
+      margin: 10px 0px;
     }
 
     .calendar-day {
@@ -292,22 +291,22 @@
 
 <body>
   <header class="header">
-    <nav class="backdrop-blur-sm h-14 overflow-x-scroll items-center w-full flex">
+    <nav class="backdrop-blur-sm h-14 items-center w-full flex">
       <div class="flex-1 flex items-center">
         <img src="images/whitedecalogo.png" style="max-width: 7%; height: auto;">
         <p class="text-sm md:text-lg lg:text-xl text-white" style="font-family: 'Gotham Bold';">Inglemoor DECA</p>
       </div>
-      <ul class="flex items-end">
+      <ul class="md:flex items-end hidden">
         <button class="small-button" onclick="handleButtonClick()">
           <img src="images/instagramlogo.png" style="max-width: 30%; height: auto; margin-left: 50px;">
         </button>
-        <li style="margin-right: 10px;"><a href="#home">Home</a></li>
-        <li style="margin-right: 10px;"><a href="#dates">Dates</a></li>
-        <li style="margin-right: 10px;"><a href="#team">Exec</a></li>
-        <li style="margin-right: 10px;"><a
+        <li class="hidden md:block" style="margin-right: 10px;"><a href="#home">Home</a></li>
+        <li class="hidden md:block" style="margin-right: 10px;"><a href="#dates">Dates</a></li>
+        <li class="hidden md:block" style="margin-right: 10px;"><a href="#team">Exec</a></li>
+        <li class="hidden md:block" style="margin-right: 10px;"><a
             href="https://drive.google.com/drive/u/1/folders/1cT06NpDMeBS0UHMZ0a4pTnC7VfV1h9yB"
             target="_blank">Resources</a></li>
-        <li style="margin-right: 10px;"><a href="decastore.html">DECA Store</a></li>
+        <li class="hidden md:block" style="margin-right: 10px;"><a href="decastore.html">DECA Store</a></li>
       </ul>
     </nav>
   </header>
@@ -342,7 +341,7 @@
     <!-- </div> -->
     <h1 class="text-center text-2xl" style="color: white" id="currentMonthYear"></h1>
     <div class="mx-auto hidden md:flex flex-col justify-center">
-      <div class="flex gap-20 pl-12 text-white">
+      <div class="flex gap-20 backdrop-blur-lg pl-8 text-white">
         <div>Sun</div>
         <div>Mon</div>
         <div>Tue</div>
@@ -351,7 +350,8 @@
         <div>Fri</div>
         <div>Sat</div>
       </div>
-      <div class="calendar hidden md:flex" id="calendar"></div>
+      <div class="calendar backdrop-blur-lg rounded-lg px-4 py-2 min-w-full container hidden md:flex" id="calendar">
+      </div>
     </div>
   </section>
 
@@ -366,10 +366,10 @@
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Emily Mo</h1>
         <p class="title">Co-President</p>
         <button class="small-button" id="emailButton;" style="justify-content: left;">
-          <img src="images/emailicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/emailicon.png" style="max-width: 50%; height: auto;">
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img src="images/bioicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.png" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -394,10 +394,11 @@
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Abhinav Akkiraju</h1>
         <p class="title">Co-President</p>
         <button class="small-button" id="emailButton;" style="justify-content: left;">
-          <img src="images/emailicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/emailicon.png" style="max-width: 50%; height: auto;">
+
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img src="images/bioicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.png" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -413,10 +414,11 @@
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Bennett Ye</h1>
         <p class="title">Director of Competition</p>
         <button class="small-button" id="emailButton;" style="justify-content: left;">
-          <img src="images/emailicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/emailicon.png" style="max-width: 50%; height: auto;">
+
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img src="images/bioicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.png" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -440,10 +442,11 @@
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Klaira Zhang</h1>
         <p class="title">Director of Fundraising</p>
         <button class="small-button" id="emailButton;" style="justify-content: left;">
-          <img src="images/emailicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/emailicon.png" style="max-width: 50%; height: auto;">
+
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img src="images/bioicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.png" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -466,10 +469,11 @@
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Daniel Su</h1>
         <p class="title">Director of Public Relations</p>
         <button class="small-button" id="emailButton;" style="justify-content: left;">
-          <img src="images/emailicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/emailicon.png" style="max-width: 50%; height: auto;">
+
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img src="images/bioicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.png" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -486,10 +490,11 @@
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Nadia Teng</h1>
         <p class="title">Event Coordinator</p>
         <button class="small-button" id="emailButton;" style="justify-content: left;">
-          <img src="images/emailicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/emailicon.png" style="max-width: 50%; height: auto;">
+
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img src="images/bioicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.png" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -510,10 +515,11 @@
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Caroline Sheehan</h1>
         <p class="title">Co-Retail Manager</p>
         <button class="small-button" id="emailButton;" style="justify-content: left;">
-          <img src="images/emailicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/emailicon.png" style="max-width: 50%; height: auto;">
+
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img src="images/bioicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.png" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -536,10 +542,11 @@
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Izzy Baquian</h1>
         <p class="title">Co-Retail Manager</p>
         <button class="small-button" id="emailButton;" style="justify-content: left;">
-          <img src="images/emailicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/emailicon.png" style="max-width: 50%; height: auto;">
+
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img src="images/bioicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.png" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -563,10 +570,11 @@
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Lillie Tsegay</h1>
         <p class="title">Senior Class Representative</p>
         <button class="small-button" id="emailButton;" style="justify-content: left;">
-          <img src="images/emailicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/emailicon.png" style="max-width: 50%; height: auto;">
+
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img src="images/bioicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.png" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -581,10 +589,11 @@
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Megan Liao</h1>
         <p class="title">Junior Class Representative</p>
         <button class="small-button" id="emailButton;" style="justify-content: left;">
-          <img src="images/emailicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/emailicon.png" style="max-width: 50%; height: auto;">
+
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img src="images/bioicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.png" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -607,10 +616,11 @@
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Amy Zhao</h1>
         <p class="title">Sophomore Class Representative</p>
         <button class="small-button" id="emailButton;" style="justify-content: left;">
-          <img src="images/emailicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/emailicon.png" style="max-width: 50%; height: auto;">
+
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img src="images/bioicon.png" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.png" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -680,7 +690,7 @@
       const body = document.body;
       const scrollY = window.scrollY;
 
-      if (scrollY > header.clientHeight) {
+      if (scrollY < header.clientHeight) {
         body.classList.add('transparent-background');
       } else {
         body.classList.remove('transparent-background');
