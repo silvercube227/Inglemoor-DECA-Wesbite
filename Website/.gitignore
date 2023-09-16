@@ -4,3 +4,4 @@ node_modules
 bun.lockb
 pnpm-lock.yaml
 .DS_Store
+.parcel-cache
