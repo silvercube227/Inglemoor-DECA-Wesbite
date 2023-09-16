@@ -144,7 +144,7 @@
       top: 0;
       left: 0;
       right: 0;
-      background-color: rgb(29, 39, 79);
+      background-color: transparent;
       /* Initial background color with transparency */
       z-index: 1000;
       /* Ensure it's on top of other content */
@@ -176,8 +176,8 @@
     }
 
     /* Add styles for the transparent background when not in the header */
-    .transparent-background .header {
-      background-color: transparent;
+    .solid-background .header {
+      background-color: rgb(29, 39, 79);
     }
 
     nav ul {
@@ -690,10 +690,10 @@
       const body = document.body;
       const scrollY = window.scrollY;
 
-      if (scrollY < header.clientHeight) {
-        body.classList.add('transparent-background');
+      if (scrollY > header.clientHeight) {
+        body.classList.add('solid-background');
       } else {
-        body.classList.remove('transparent-background');
+        body.classList.remove('solid-background');
       }
     }
 
