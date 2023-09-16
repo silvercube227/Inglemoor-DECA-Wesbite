@@ -668,7 +668,7 @@
     }
   </script>
   <script>
-    function toggleBioBox(button) {
+    window.toggleBioBox = function toggleBioBox(button) {
       var bioBox = button.nextElementSibling;
       bioBox.classList.toggle("active");
     }
