@@ -286,6 +286,12 @@
     .event-list {
       text-align: center;
     }
+    .event-link {
+      color: white;
+      font-size: 0.9rem;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -321,7 +327,7 @@
         With Inglemoor DECA
       </p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2H6q51P586y4rGRyLnhIHErvByI6XdgyVdN3N23IqFQei8Q/viewform">
-        <button class="text-white bg-blue-400 px-8 py-4 rounded-lg z-10">
+        <button class="button">
           Join Us!
         </button>
       </a>
@@ -333,6 +339,7 @@
     <div style="display: flex; align-items: center; justify-content: center;">
       <h1 class="text-center" style="font-family: 'Gotham Bold'; color: white; font-size: 40px;">Important Dates</h1>
     </div>
+    <h2 class = "text-center" style = "font-family: 'Gotham Bold'; color: white; font-size: 20px;">Meeting Slides Are Linked On the Calendar!</h2>
     <!-- <div class="container w-fit overflow-x-hidden" -->
     <!-- style="display: flex; flex-direction: column; align-items: center; justify-content: center;"> -->
     <!-- Important Dates content goes here -->
@@ -735,24 +742,25 @@
     const calendarDays = document.querySelectorAll(".calendar-day");
 
     const predefinedEvents = {
-      "13": ["First DECA Meeting!"],
+      "13": ["<a class='event-link' href='https://www.canva.com/design/DAFrrX7rTVc/v3TcNMAxsb7I3SAElZllRQ/edit?utm_content=DA[…]m_campaign=designshare&utm_medium=link2&utm_source=sharebutton'>First Interest Meeting!</a>"],
+      "20": ["<a class='event-link' href='https://www.canva.com/design/DAFrrX7rTVc/v3TcNMAxsb7I3SAElZllRQ/edit?utm_content=DA[…]m_campaign=designshare&utm_medium=link2&utm_source=sharebutton'>Second Interest Meeting!</a>"]
       //add events for each month
     };
 
     calendarDays.forEach(day => {
       const dateKey = day.textContent;
       if (predefinedEvents[dateKey]) {
-        const eventList = document.createElement("div");
-        eventList.className = "event-list";
+          const eventList = document.createElement("div");
+          eventList.className = "event-list";
 
-        predefinedEvents[dateKey].forEach(eventText => {
-          const eventElement = document.createElement("div");
-          eventElement.className = "event";
-          eventElement.textContent = eventText;
-          eventList.appendChild(eventElement);
-        });
+          predefinedEvents[dateKey].forEach(eventText => {
+              const eventElement = document.createElement("div");
+              eventElement.className = "event";
+              eventElement.innerHTML = eventText;
+              eventList.appendChild(eventElement);
+          });
 
-        day.appendChild(eventList);
+          day.appendChild(eventList);
       }
     });
   </script>
