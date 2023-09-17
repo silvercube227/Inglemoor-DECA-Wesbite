@@ -115,13 +115,16 @@
     }
 
     .card {
+      position: relative;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       max-width: 275px;
       margin: auto;
+      margin-bottom: 20px;
       text-align: center;
       background-color: white;
       border-radius: 10px;
     }
+
 
     .title {
       color: rgb(29, 39, 79);
@@ -205,21 +208,28 @@
     }
 
     .bio-content {
-      position: relative;
+      background-color: white;
+      position: absolute;
       top: 100%;
       left: 0;
       width: 100%;
-      visibility: hidden;
       opacity: 0;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.9s ease-in-out, opacity 0.3s ease-in-out;
+      transition: max-height 1s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-in-out, margin-top 0.4s ease-in-out;
+      z-index: 1;
+      border-radius: 10px;
     }
 
     .bio-content.active {
-      visibility: visible;
+      margin-top: -20px;
       opacity: 1;
-      max-height: fit-content;
+      max-height: 2000px;
+      transition: max-height 1s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-in-out, margin-top 0.4s ease-in-out;
+    }
+
+    #bioButton>img {
+      transform-origin: 50% 50%;
     }
 
     .card-container.active .bio-content {
@@ -238,6 +248,7 @@
       grid-template-columns: repeat(7, 1fr);
       gap: 10px;
       margin: 10px 0px;
+      max-height: fit-content;
     }
 
     .calendar-day {
@@ -286,6 +297,7 @@
     .event-list {
       text-align: center;
     }
+
     .event-link {
       color: white;
       font-size: 0.9rem;
@@ -335,11 +347,12 @@
     <!-- Home content goes here -->
   </div>
 
-  <section id="dates" class="content reveal flex flex-col h-full overflow-hidden">
+  <section id="dates" class="reveal flex flex-col h-fit">
     <div style="display: flex; align-items: center; justify-content: center;">
       <h1 class="text-center" style="font-family: 'Gotham Bold'; color: white; font-size: 40px;">Important Dates</h1>
     </div>
-    <h2 class = "text-center" style = "font-family: 'Gotham Bold'; color: white; font-size: 20px;">Meeting Slides Are Linked On the Calendar!</h2>
+    <h2 class="text-center" style="font-family: 'Gotham Bold'; color: white; font-size: 20px;">Meeting Slides Are Linked
+      On the Calendar!</h2>
     <!-- <div class="container w-fit overflow-x-hidden" -->
     <!-- style="display: flex; flex-direction: column; align-items: center; justify-content: center;"> -->
     <!-- Important Dates content goes here -->
@@ -347,8 +360,8 @@
 
     <!-- </div> -->
     <h1 class="text-center text-2xl" style="color: white" id="currentMonthYear"></h1>
-    <div class="mx-auto hidden md:flex flex-col justify-center">
-      <div class="flex gap-20 backdrop-blur-lg pl-8 text-white">
+    <div class="mx-auto hidden md:flex flex-col justify-center overflow-hidden">
+      <div class="flex h-full mt-10 gap-20 backdrop-blur-lg pl-8 text-white">
         <div>Sun</div>
         <div>Mon</div>
         <div>Tue</div>
@@ -357,7 +370,8 @@
         <div>Fri</div>
         <div>Sat</div>
       </div>
-      <div class="calendar backdrop-blur-lg rounded-lg px-4 py-2 min-w-full container hidden md:flex" id="calendar">
+      <div class="calendar backdrop-blur-lg rounded-lg px-4 py-2 h-full min-w-full container hidden md:flex"
+        id="calendar">
       </div>
     </div>
   </section>
@@ -367,8 +381,8 @@
     <div style="display: flex; align-items: center; justify-content: center;">
       <h1 style="font-family: 'Gotham Bold'; color: white; font-size: 40px;">DECA Executive Team</h1>
     </div>
-    <div class="card-container h-fit">
-      <div class="card">
+    <div class="card-container h-fit hover:[&>div]:outline-2 [&>div]:outline-amber-400">
+      <div class="card hover:outline-8 outline-amber-400 outline-offset-2">
         <img src="images/whitedecalogo.webp" style="width:100%">
         <h1 style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79);">Emily Mo</h1>
         <p class="title">Co-President</p>
@@ -376,12 +390,11 @@
           <img loading="lazy" src="images/emailicon.webp" style="max-width: 50%; height: auto;">
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
-          <p class="fixed bg-white"
-            style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
+          <p style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
             My name is Emily Mo, a Senior at Inglemoor High School.
             I’ve been in DECA all of high school and have competed entirely in finance-related events: Financial
             Consulting during my Freshman year and Financial Services in the later two.
@@ -405,12 +418,11 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
-          <p class="fixed bg-white"
-            style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
+          <p class="" style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
             abhinav was too busy to write a bio for us ;-;
           </p>
         </div>
@@ -425,12 +437,11 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
-          <p class="fixed bg-white"
-            style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
+          <p class="" style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
             Hello hello, this is Bennett. I’m currently a senior and this is my third year in DECA (I started in my
             sophomore year but I regret not starting sooner).
             I’m huge classical music and fine arts fan (let me know what your favorite piano piece is :D) as well as the
@@ -453,12 +464,11 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
-          <p class="fixed bg-white"
-            style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
+          <p class="" style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
             My name is Klaira, I’m a senior, and this is my third year serving on the Inglemoor DECA executive team.
             Last year, I achieved my elementary self’s goal in high school of traveling to a Disney park through DECA
             when I attended the international conference in Orlando, FL.
@@ -480,12 +490,11 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
-          <p class="fixed bg-white"
-            style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
+          <p class="" style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
             I’m Daniel and I’m going to be a junior next year. I’m a big fan of listening to music, playing sports, and
             hanging out with friends. Even after failing my first two years at area, I made it to ICDC top 10 in my
             event.
@@ -501,12 +510,11 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
-          <p class="fixed bg-white"
-            style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
+          <p class="" style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
             Hello, Nadia here :) I’m currently a (semi-retired) competitive table tennis athlete who happens to be
             allergic to four types of meat. Also a big music person- if you’re a fan of wave to earth, keshi, Laufey, or
             Luke Chiang, I would love to be your friend and share my playlists with you. Workwise, my contributions to
@@ -526,12 +534,11 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
-          <p class="fixed bg-white"
-            style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
+          <p class="" style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
             My name is Caroline Sheehan, and I am a senior at Inglemoor High School! I’ve been in DECA since my freshman
             year and it has always been my favorite club. My favorite events to compete in are anything that’s prepared
             (I did a role play my freshman year, let's just say it was not for me). I’ve met so many people from DECA
@@ -553,12 +560,11 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
-          <p class="fixed bg-white"
-            style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
+          <p class="" style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
             Hey I’m Izzy and I am a senior at Inglemoor this year! This is my third year doing DECA and I highly
             recommend it for anyone in any grade. It’s not only taught me a lot about business and marketing but also
             other important skills like teamwork and public speaking. One of my favorite things about DECA is there is a
@@ -581,12 +587,11 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
-          <p class="fixed bg-white"
-            style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
+          <p class="" style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
 
           </p>
         </div>
@@ -600,12 +605,11 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
-          <p class="fixed bg-white"
-            style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
+          <p class="" style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
             My name is Megan Liao, a Junior at Inglemoor High School. I've been a member of DECA throughout high school
             but recently became more involved in my Sophomore year, competing in Entrepreneurship and Marketing. Going
             into high school, I never really took clubs seriously 💀. However, attending the DECA conferences from Area
@@ -627,12 +631,11 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
-          <p class="fixed bg-white"
-            style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
+          <p class="" style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
             My name is Amy, and I am a sophomore at Inglemoor. The DECA event I competed in during my freshman year was
             Start-Up Business Plan, which I somehow won first place at Area for. Thanks to DECA, I got to make new
             friends, bond with other students, learn from my mentors, and have an excuse to walk around the mall wearing
@@ -687,7 +690,11 @@
   <script>
     window.toggleBioBox = function toggleBioBox(button) {
       var bioBox = button.nextElementSibling;
+      var on = bioBox.classList.contains("active") ? 180 : 0;
       bioBox.classList.toggle("active");
+
+      button.firstElementChild.style.transition = "transform 0.3s ease-in-out";
+      button.firstElementChild.style.transform = `rotate(${180 - on}deg)`;
     }
   </script>
   <script>
@@ -750,17 +757,17 @@
     calendarDays.forEach(day => {
       const dateKey = day.textContent;
       if (predefinedEvents[dateKey]) {
-          const eventList = document.createElement("div");
-          eventList.className = "event-list";
+        const eventList = document.createElement("div");
+        eventList.className = "event-list";
 
-          predefinedEvents[dateKey].forEach(eventText => {
-              const eventElement = document.createElement("div");
-              eventElement.className = "event";
-              eventElement.innerHTML = eventText;
-              eventList.appendChild(eventElement);
-          });
+        predefinedEvents[dateKey].forEach(eventText => {
+          const eventElement = document.createElement("div");
+          eventElement.className = "event";
+          eventElement.innerHTML = eventText;
+          eventList.appendChild(eventElement);
+        });
 
-          day.appendChild(eventList);
+        day.appendChild(eventList);
       }
     });
   </script>
