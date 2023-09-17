@@ -374,6 +374,8 @@
         id="calendar">
       </div>
     </div>
+    <ul id="mobilecalendar" class="flex flex-col gap-y-2 md:hidden mb-4 h-full container min-w-full">
+    </ul>
   </section>
 
 
@@ -753,6 +755,16 @@
       "20": ["<a class='event-link' href='https://www.canva.com/design/DAFrrX7rTVc/v3TcNMAxsb7I3SAElZllRQ/edit?utm_content=DA[…]m_campaign=designshare&utm_medium=link2&utm_source=sharebutton'>Second Interest Meeting!</a>"]
       //add events for each month
     };
+    const mobilecalendarDiv = document.getElementById("mobilecalendar");
+    for (let i = 1; i <= 31; ++i) {
+      if (predefinedEvents[i]) {
+        console.log(i + ": " + predefinedEvents[i])
+        const eventList = document.createElement("li");
+        eventList.className = "event-list";
+        eventList.innerHTML = predefinedEvents[i];
+        mobilecalendarDiv.appendChild(eventList);
+      }
+    }
 
     calendarDays.forEach(day => {
       const dateKey = day.textContent;
