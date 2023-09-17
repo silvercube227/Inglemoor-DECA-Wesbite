@@ -16,6 +16,9 @@ jobs:
         with:
           node-version: 16
 
+      - name: Get into correct directory
+        run: cd Website
+
       - name: Install dependencies
         run: npm install
 
