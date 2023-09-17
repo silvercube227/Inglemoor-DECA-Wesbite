@@ -228,6 +228,10 @@
       transition: max-height 1s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-in-out, margin-top 0.4s ease-in-out;
     }
 
+    #bioButton>img {
+      transform-origin: 50% 50%;
+    }
+
     .card-container.active .bio-content {
       transform: scaleY(1);
     }
@@ -244,6 +248,7 @@
       grid-template-columns: repeat(7, 1fr);
       gap: 10px;
       margin: 10px 0px;
+      max-height: fit-content;
     }
 
     .calendar-day {
@@ -342,7 +347,7 @@
     <!-- Home content goes here -->
   </div>
 
-  <section id="dates" class="content reveal flex flex-col h-full overflow-hidden">
+  <section id="dates" class="reveal flex flex-col h-fit">
     <div style="display: flex; align-items: center; justify-content: center;">
       <h1 class="text-center" style="font-family: 'Gotham Bold'; color: white; font-size: 40px;">Important Dates</h1>
     </div>
@@ -355,8 +360,8 @@
 
     <!-- </div> -->
     <h1 class="text-center text-2xl" style="color: white" id="currentMonthYear"></h1>
-    <div class="mx-auto hidden md:flex flex-col justify-center">
-      <div class="flex gap-20 backdrop-blur-lg pl-8 text-white">
+    <div class="mx-auto hidden md:flex flex-col justify-center overflow-hidden">
+      <div class="flex h-full mt-10 gap-20 backdrop-blur-lg pl-8 text-white">
         <div>Sun</div>
         <div>Mon</div>
         <div>Tue</div>
@@ -365,7 +370,8 @@
         <div>Fri</div>
         <div>Sat</div>
       </div>
-      <div class="calendar backdrop-blur-lg rounded-lg px-4 py-2 min-w-full container hidden md:flex" id="calendar">
+      <div class="calendar backdrop-blur-lg rounded-lg px-4 py-2 h-full min-w-full container hidden md:flex"
+        id="calendar">
       </div>
     </div>
   </section>
@@ -384,7 +390,7 @@
           <img loading="lazy" src="images/emailicon.webp" style="max-width: 50%; height: auto;">
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -412,7 +418,7 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -431,7 +437,7 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -458,7 +464,7 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -484,7 +490,7 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -504,7 +510,7 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -528,7 +534,7 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -554,7 +560,7 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -581,7 +587,7 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -599,7 +605,7 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -625,7 +631,7 @@
 
         </button>
         <button class="small-button" id="bioButton" onclick="toggleBioBox(this)" style="justify-content: right;">
-          <img loading="lazy" src="images/bioicon.webp" style="max-width: 50%; height: auto;">
+          <img loading="lazy" src="images/bioicon.svg" style="max-width: 50%; height: auto;">
         </button>
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
@@ -684,7 +690,11 @@
   <script>
     window.toggleBioBox = function toggleBioBox(button) {
       var bioBox = button.nextElementSibling;
+      var on = bioBox.classList.contains("active") ? 180 : 0;
       bioBox.classList.toggle("active");
+
+      button.firstElementChild.style.transition = "transform 0.3s ease-in-out";
+      button.firstElementChild.style.transform = `rotate(${180 - on}deg)`;
     }
   </script>
   <script>
