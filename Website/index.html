@@ -305,6 +305,8 @@
       cursor: pointer;
     }
   </style>
+
+
 </head>
 
 <body>
@@ -684,22 +686,24 @@
     });
   </script>
   <script>
-    function handleButtonClick() {
-      window.location.href = 'https://www.instagram.com/inglemoordeca/?hl=en'; // Replace 'https://example.com' with the desired page URL
-    }
-  </script>
-  <script>
-    function spotifyclick() {
-      window.location.href = 'https://open.spotify.com/playlist/07ge6FG5exveEopMYFkzAt?si=de80647c1b5849cb'; // Replace 'https://example.com' with the desired page URL
-    }
-  </script>
-  <script>
     function toggleBioBox() {
       var bioBox = document.getElementById("bioBox");
       bioBox.classList.toggle("active"); // Toggle the "active" class on the bio box
     }
   </script>
+  <!-- Add these to the global window object -->
   <script>
+    window.handleButtonClick = function handleButtonClick() {
+      window.location.href = 'https://www.instagram.com/inglemoordeca/?hl=en'; // Replace 'https://example.com' with the desired page URL
+    }
+  </script>
+  <script>
+    window.spotifyclick = function spotifyclick() {
+      window.location.href = 'https://open.spotify.com/playlist/07ge6FG5exveEopMYFkzAt?si=de80647c1b5849cb'; // Replace 'https://example.com' with the desired page URL
+    }
+  </script>
+  <script>
+    // Make toggleBioBox function globally recognized
     window.toggleBioBox = function toggleBioBox(button) {
       var bioBox = button.nextElementSibling;
       var on = bioBox.classList.contains("active") ? 180 : 0;
