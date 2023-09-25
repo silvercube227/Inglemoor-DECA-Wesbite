@@ -8,6 +8,11 @@
   <!-- <link rel="stylesheet" href="styles.css"> -->
   <link rel="stylesheet" href="output.css">
   <link rel="stylesheet" href="fonts/Gotham.css" />
+  <!-- Vercel Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
   <style>
     /* Enable smooth scrolling! */
     html {
@@ -305,6 +310,8 @@
       cursor: pointer;
     }
   </style>
+
+
 </head>
 
 <body>
@@ -315,6 +322,10 @@
         <p class="text-sm md:text-lg lg:text-xl text-white" style="font-family: 'Gotham Bold';">Inglemoor DECA</p>
       </div>
       <ul class="md:flex items-end hidden">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 114ae52b936699dbfd9f3cf5dcebf95fd9ee5bfa
         <button style="width: 30px; margin-right: 24px;" class="small-button border-2 border-red-400"
           onclick="handleButtonClick()">
           <img width="30" src="images/instagramlogo.webp">
@@ -429,7 +440,7 @@
         <div class="bio-content" id="bioBox"> <!-- Use a new div for the bio content -->
           <!-- Bio content goes here -->
           <p class="" style="font-family: 'Gotham Bold'; color: rgb(29, 39, 79); padding: 20px; text-align: left;">
-            abhinav was too busy to write a bio for us ;-;
+            Hey! My name is Abhinav and I am a senior. This is my fourth year in DECA and my first year on the executive team. The events I have competed in are: Financial Consulting, Financial Services, and Stock Market Game. I qualified for ICDC x3 so feel free to reach out with any questions if you have them! I am also on the tennis team (captain, it's whatever) and like to watch soccer.
           </p>
         </div>
       </div>
@@ -683,22 +694,24 @@
     });
   </script>
   <script>
-    function handleButtonClick() {
-      window.location.href = 'https://www.instagram.com/inglemoordeca/?hl=en'; // Replace 'https://example.com' with the desired page URL
-    }
-  </script>
-  <script>
-    function spotifyclick() {
-      window.location.href = 'https://open.spotify.com/playlist/07ge6FG5exveEopMYFkzAt?si=de80647c1b5849cb'; // Replace 'https://example.com' with the desired page URL
-    }
-  </script>
-  <script>
     function toggleBioBox() {
       var bioBox = document.getElementById("bioBox");
       bioBox.classList.toggle("active"); // Toggle the "active" class on the bio box
     }
   </script>
+  <!-- Add these to the global window object -->
   <script>
+    window.handleButtonClick = function handleButtonClick() {
+      window.location.href = 'https://www.instagram.com/inglemoordeca/?hl=en'; // Replace 'https://example.com' with the desired page URL
+    }
+  </script>
+  <script>
+    window.spotifyclick = function spotifyclick() {
+      window.location.href = 'https://open.spotify.com/playlist/07ge6FG5exveEopMYFkzAt?si=de80647c1b5849cb'; // Replace 'https://example.com' with the desired page URL
+    }
+  </script>
+  <script>
+    // Make toggleBioBox function globally recognized
     window.toggleBioBox = function toggleBioBox(button) {
       var bioBox = button.nextElementSibling;
       var on = bioBox.classList.contains("active") ? 180 : 0;
