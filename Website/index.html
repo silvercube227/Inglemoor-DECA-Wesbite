@@ -309,6 +309,9 @@
         <button style="width: 30px; margin-right: 24px;" class="small-button w-fit" onclick="spotifyclick()">
           <img width="30" src="images/spotifylogo.webp">
         </button>
+        <button style="width: 30px; margin-right: 24px;" class="small-button w-fit" onclick="slackclick()">
+          <img width="30" src="images/slack_icon.png">
+        </button>
         <li class="hidden md:block" style="margin-right: 10px;"><a href="#home">Home</a></li>
         <li class="hidden md:block" style="margin-right: 10px;"><a href="#dates">Dates</a></li>
         <li class="hidden md:block" style="margin-right: 10px;"><a href="#team">Exec</a></li>
@@ -686,12 +689,17 @@
   <!-- Add these to the global window object -->
   <script>
     window.handleButtonClick = function handleButtonClick() {
-      window.location.href = 'https://www.instagram.com/inglemoordeca/?hl=en'; // Replace 'https://example.com' with the desired page URL
+      window.location.href = 'https://www.instagram.com/inglemoordeca/?hl=en'; 
     }
   </script>
   <script>
     window.spotifyclick = function spotifyclick() {
-      window.location.href = 'https://open.spotify.com/playlist/07ge6FG5exveEopMYFkzAt?si=de80647c1b5849cb'; // Replace 'https://example.com' with the desired page URL
+      window.location.href = 'https://open.spotify.com/playlist/07ge6FG5exveEopMYFkzAt?si=de80647c1b5849cb'; 
+    }
+  </script>
+  <script>
+    window.slackclick = function slackclick() {
+      window.location.href = 'https://join.slack.com/t/inglemoordeca-azc2102/shared_invite/zt-25vkfdii9-24BqQt1wfzxBlRNC~k7feg'; 
     }
   </script>
   <script>
